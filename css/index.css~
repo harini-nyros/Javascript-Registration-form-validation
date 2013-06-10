@@ -1,0 +1,8 @@
+#uname
+{
+	background-image:url('images/user.png');
+	background-repeat:no-repeat;
+	background-position:5px 0px;
+	padding-left:25px
+}
+

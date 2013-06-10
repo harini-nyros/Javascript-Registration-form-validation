@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>  Assignment</title> <!-- Title of the page-->
+
+<!--linking Style Sheets-->
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<!-- linking Javascript Files-->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<script src="js/validations.js"></script>
+
+</head><!--Head Ending-->
+
+<body><!-- body begining-->
+<!--Container-->
+<div class="container">
+<div class="row">
+<div class="span11">
+
+	<h1>Form</h1>
+</div>
+</div>
+<div class="row">
+<div class="span11">
+	<div class="progress progress-striped active bar">
+            <div class="bar" id="bar" style="width: 0%; value:0%">
+	   </div>
+       </div>
+       
+       <div id="alert" class="alert-success" style="visibility:hidden" > 
+	<button id="close" class="close" data-dismiss="alert" type="button">&times;</button>
+          <strong>Congrats</strong>&nbsp;Your Details are Successfully submitted
+       </div>
+ </div>
+</div>         
+ <!-- Form --> 
+<div class="row">
+<div class="span11">   
+<form  name="myform" method="post" class="form-horizontal" onsubmit="return formValidate(this)">
+
+  <fieldset>
+    <legend>Account Information</legend>
+	<div class="control-group"><!-- User Name-->
+    <label class="label">User Name:</label>
+    <div class="controls">
+      <input type="text" name="usrname" id="username" placeholder="Username" onblur="return user_validation(this)"/>
+      <span style="color:red" id="message"> </span>
+    </div>
+</div>
+
+<div class="control-group"><!-- Password-->
+    <label class="control-label">Password:</label>
+    <div class="controls">
+      <input type="password"  name="pwd" id="password" placeholder="Password" onblur="return pwd_validation(this)"/>
+	<span style="color:red" id="pmessage"> </span>
+    </div>
+</div>
+       
+     </fieldset>
+
+  <fieldset>
+    <legend>Profile Information</legend>
+
+<div class="control-group">
+    <label class="control-label">First Name:</label>
+    <div class="controls">
+      <input type="text" name="firstname" id="firstname" placeholder="firstname" onblur="return fname_validation(this)"/>
+      <span style="color:red" id="fmessage"> </span>
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label" for="lastname">Last Name:</label>
+    <div class="controls">
+      <input type="text"  name="lastname" id="lastname" placeholder="lastname"onblur="return lname_validation(this)"/>
+      <span style="color:red" id="lmessage"> </span>
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="label" for="pic">Profile Pic :</label>
+    <div class="controls">
+      <input type="file" name="filename" id="filename"   onblur="return filename_validation(this)"/>
+      <span id="imessage"></span>
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="label" for="gen">Gender:</label>
+
+    <div class="controls">
+      	<label class="radio  inline">
+  		<input type="radio" name="sex" checked="checked">Male
+	</label>
+	
+	<label class="radio  inline">
+		  <input type="radio" name="sex">Female
+	</label>
+
+    </div>
+</div>       
+
+<div class="control-group">
+    <label class="control-label" for="dob">Date of Birth :</label>
+    <div class="controls">
+	
+     <select  name="day" id="day" onblur="return day_validation(this)"/>
+<option value="selectday">Select Day</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+</select>
+<select title="Select month"  name="month" id="month" onblur="return month_validation(this)"/>
+			<option value="selectmonth">Select month</option><!-- select tag for month-->
+					<option name="January">January</option>
+					<option name="February">February</option>
+					<option name="March">March</option>
+					<option name="April">April</option>
+					<option name="May">May</option>
+					<option name="June">June</option>
+					<option name="July">July</option>
+					<option name="August">August</option>
+					<option name="September">September</option>
+					<option name="October">October</option>
+					<option name="November">November</option>
+					<option name="December">December</option>
+					</select>
+<select name="year" id="year" onblur="return year_validation(this)"/>
+<option value="selectyear">Select Year</option>
+  <option>1995</option>
+  <option>1996</option>
+  <option>1997</option>
+  <option>1998</option>
+  <option>1999</option>
+  <option>2000</option>
+  <option>2001</option>
+  <option>2002</option>
+  <option>2003</option>
+  <option>2004</option>
+  <option>2005</option>
+  <option>2006</option>
+  <option>2007</option>
+  <option>2008</option>
+  <option>2009</option>
+  
+</select>
+	<span style="color:red" id="dobmessage"> </span>
+	
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label">Hobbies :</label>
+
+    <div class="controls">
+      	<label class="radio inline">
+  		<input id="hobbies1" type="radio" name="hobbies" 
+		 on blur="return isOneChecked(this)"/>Painting
+	</label>
+	
+	<label class="radio inline">
+		  <input id="hobbies2" type="radio" name="hobbies" 
+		on blur="return isOneChecked(this)"/>Singing
+	</label>
+
+      	<label class="radio inline">
+  		<input id="hobbies3" type="radio" name="hobbies" 
+				on blur="return isOneChecked(this)"/>Travelling
+	</label>
+	
+	<label class="radio inline">
+		  <input id="hobbies4" type="radio" name="hobbies" 
+				on blur="return isOneChecked(this)"/>Dancing
+	</label>
+
+      	<label class="radio inline">
+  		<input id="hobbies5" type="radio" name="hobbies" 
+			on blur="return isOneChecked(this)"/>Gardening
+	</label>
+	
+	<label class="radio inline">
+		  <input id="hobbies6" type="radio" name="hobbies" 
+			on blur="return isOneChecked(this)"/>Others
+	</label>
+	<span id="hobmes"> </span>
+    </div>
+</div>       
+
+	<div class="control-group">
+    	<label class="control-label" for="countries">Country:</label>
+    		<div class="controls">
+    			 <select id="countries" name="country" multiple="multiple" onblur="return country_validation(this)"/> 
+(this)"/>
+ 				<option value="India">India</option>
+				<option value="Pakistan">Pakistan</option>
+				<option value="Australia">Australia</option>
+				<option value="U.S.A">U.S.A</option>
+				<option value="London">London</option>
+                        	<option value="Paris">Paris</option>
+				<option value="SriLanka">SriLanka</option>
+
+			</select>
+		<span style="color:red" id="countrymessage"> </span>
+		</div>
+
+	</div>
+</fieldset>
+
+<fieldset>
+    <legend>Contact Information</legend>
+
+	<div class="control-group">
+    		<label class="control-label">Phone:</label>
+    		<div class="controls">
+      			<input type="text" id="phonenum" name="phonenum" placeholder="Phonenumber"     			onblur="return  phnum_validation(this)"/>
+			<span style="color:red" id="phmessage"> </span>
+    		</div>
+	</div>
+
+	<div class="control-group" style="padding-left:50px">
+    		<div class="controls">
+			<button  name="submit" class="btn btn-success">Submit</button>
+    		</div>
+	</div>
+       
+</fieldset>
+
+
+
+</form>
+
+</div>
+</div>
+</div><!--Container-->
+</body>
+</html>
+
+
